@@ -1,0 +1,75 @@
+!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogiTrack TMS - Tableau de Bord</title>
+    <style>
+        /* CSS de base pour la lisibilité */
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        .container { max-width: 1200px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #007bff; color: white; }
+        .form-section { margin-bottom: 30px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        label, input, select, button { display: block; margin-bottom: 10px; }
+        input[type="text"], input[type="email"], input[type="tel"], select { width: calc(100% - 22px); padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background-color: #28a745; color: white; padding: 10px 15px; border: none; cursor: pointer; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LogiTrack - Tableau de Bord TMS</h1>
+
+        <div class="form-section">
+            <h2>Ajouter une Nouvelle Commande</h2>
+            <form id="addOrderForm">
+                <label for="client">Client :</label>
+                <input type="text" id="client" required>
+                
+                <label for="adresseDepart">Adresse Départ :</label>
+                <input type="text" id="adresseDepart" required>
+
+                <label for="adresseLivraison">Adresse Livraison :</label>
+                <input type="text" id="adresseLivraison" required>
+
+                <label for="typeCamion">Type de Camion :</label>
+                <select id="typeCamion" required>
+                    <option value="">Sélectionner</option>
+                    <option value="Fourgon">Fourgon</option>
+                    <option value="Semi-remorque">Semi-remorque</option>
+                    <option value="Citerne">Citerne</option>
+                </select>
+
+                <label for="telephone">Téléphone (Client) :</label>
+                <input type="tel" id="telephone" required>
+                
+                <button type="submit">Ajouter Commande</button>
+            </form>
+        </div>
+
+        <div class="table-section">
+            <h2>Commandes Actuelles</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Client</th>
+                        <th>Départ</th>
+                        <th>Livraison</th>
+                        <th>Type Camion</th>
+                        <th>Contact</th>
+                        <th>Statut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="ordersTableBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
